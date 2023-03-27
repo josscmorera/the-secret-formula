@@ -43,10 +43,14 @@ let form4 = document.querySelector('#form4');
 let username = document.querySelector('#username');
 let email = document.querySelector('#email');
 let password = document.querySelector('#password');
-let password2 = document.querySelector('#password2');
+let password2 = document.querySelector('#confirm-password');
 let submit3 = document.querySelector('#submit3');
 
 form4.addEventListener('submit', function (event) {
     event.preventDefault();
+    if (password.value !== password2.value) {
+        alert("Passwords do not match!");
+        return;
+    }
     alert(`Username: ${username.value} Email: ${email.value}`);
 });
